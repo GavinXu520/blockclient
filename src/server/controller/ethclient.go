@@ -9,9 +9,6 @@ import (
 	"math/big"
 )
 
-
-
-
 type EthController struct {
 }
 
@@ -37,7 +34,6 @@ func (ec *EthController) DeployContract(ctx *iris.Context){
 	ctx.JSON(iris.StatusOK, ethService.DeployContract(res.Total, res.Decimals, res.Name, res.Symbol, string(key), res.Pwd))
 }
 
-
 func (ec *EthController) TokenTransfer (ctx *iris.Context) {
 	var res entity.ToekenTransferEntity
 	if err := json.Unmarshal(ctx.PostBody(), &res); nil != err {
@@ -51,7 +47,6 @@ func (ec *EthController) TokenTransfer (ctx *iris.Context) {
 	}
 	ctx.JSON(iris.StatusOK, ethService.TokenTransfer(res.Address, res.To, string(key), res.Pwd, big.NewInt(int64(res.Value))))
 }
-
 
 func (ec *EthController) QueryTokenBalance (ctx *iris.Context) {
 	ctx.JSON(iris.StatusOK, ethService.QueryTokenBalance(ctx.URLParam("contract"), ctx.URLParam("eoas")))
