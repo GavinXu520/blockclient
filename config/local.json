@@ -1,0 +1,22 @@
+{
+  "name": "blockClient",
+  "version": "0.1",
+  "rateLimit": {
+    "key":"block:",
+    "loginErr": {
+      "times":3,
+      "second":300
+    }
+  },
+  "server":{
+    "host": "localhost",
+    "port": 9990
+  },
+  "redis": {
+    "addr": "127.0.0.1:6379",
+    "password": "123456",
+    "database": 2,
+    "maxActive": 50,
+    "idleTimeout": 60
+  }
+}
