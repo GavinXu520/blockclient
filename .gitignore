@@ -78,10 +78,9 @@ fabric.properties
 *.iml
 .DS_Store
 /k8s/
-/soda-manager
+
 /Dockerfile
-/config/prerelease.json
-/config/preview.json
+
 
 #/vendor/
-/build/business-user
+
