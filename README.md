@@ -1,1 +1,1 @@
-> protoc -I src/server/rpc src/server/rpc/*.proto --go_out=plugins=grpc:./src/server/protobuf
+一个go项目中使用ethclient和geth节点交互的demo
