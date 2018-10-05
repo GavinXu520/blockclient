@@ -11,8 +11,6 @@ var (
 )
 
 func InitEthClient (){
-	//conn, err := ethclient.Dial("http://0.0.0.0:10070")
-	//conn, err := ethclient.Dial("http://127.0.0.1:10070")
 	conn, err := ethclient.Dial("http://127.0.0.1:8545")
 	//conn, err := ethclient.Dial("\\\\.\\pipe\\geth.ipc")
 	if nil != err {
