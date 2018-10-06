@@ -9,6 +9,7 @@ import (
 
 var (
 	ethCon = &controller.EthController{}
+	mCon = &controller.MonitorController{}
 )
 func Api() {
 
@@ -16,6 +17,7 @@ func Api() {
 		ctx.Response.Header.Set("X-Frame-Options", "Allow-From https://www.ethereum.org/")
 		//ctx.Render("index.html", map[string]interface{}{"title": "明星钻", "body": "hello"}, iris.RenderOptions{"gzip": true})
 	})
+
 	api := iris.Party("/api", func(ctx *iris.Context){
 		ctx.Next()
 		var res, method string
@@ -41,4 +43,7 @@ func Api() {
 
 	// 查询账户的token余额
 	api.Get("/v1/:appId/tokenBalance", ethCon.QueryTokenBalance)
+
+	// 自定义性能监控数据统计
+	api.Get("/v1/:appId/debug/stats", mCon.RunningStats2)
 }

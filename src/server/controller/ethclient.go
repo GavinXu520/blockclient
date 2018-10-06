@@ -12,7 +12,7 @@ import (
 type EthController struct {
 }
 
-var ethService = service.EthService{}
+var ethService = &service.EthService{}
 
 // query account's ether balance
 func (ec *EthController) GetBlanceByAddress(ctx *iris.Context) {
