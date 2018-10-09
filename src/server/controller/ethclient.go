@@ -51,3 +51,8 @@ func (ec *EthController) TokenTransfer (ctx *iris.Context) {
 func (ec *EthController) QueryTokenBalance (ctx *iris.Context) {
 	ctx.JSON(iris.StatusOK, ethService.QueryTokenBalance(ctx.URLParam("contract"), ctx.URLParam("eoas")))
 }
+
+
+//func (ec *EthController) CreateAccount(ctx *iris.Context) {
+//	ctx.JSON(iris.StatusOK, ethService.CreateAccount(ctx.URLParam("pwd")))
+//}

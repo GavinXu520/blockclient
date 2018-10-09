@@ -44,6 +44,9 @@ func Api() {
 	// 查询账户的token余额
 	api.Get("/v1/:appId/tokenBalance", ethCon.QueryTokenBalance)
 
+	// 创建账户
+	//api.Get("/v1/:appId/CreateAccount", ethCon.CreateAccount)
+
 	// 自定义性能监控数据统计
 	api.Get("/v1/:appId/debug/stats", mCon.RunningStats2)
 }

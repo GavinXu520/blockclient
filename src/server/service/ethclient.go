@@ -14,7 +14,10 @@ import (
 	"time"
 	"bytes"
 	"blockclient/src/server/tokens"
-	//"encoding/json"
+
+
+
+
 )
 
 type EthService struct {
@@ -209,3 +212,19 @@ func (es *EthService) SubcribeEvents(contractAddress, to string) {
 		}
 	}()
 }
+
+
+
+//func (es *EthService) CreateAccount (passphrase string) *entity.Result {
+//	keydir, err := filepath.Abs("keystore")
+//	if nil != err {
+//		log.Panic("Failed to read configuration: %v", err)
+//	}
+//	myKeystore := geth.NewKeyStore(keydir, keystore.StandardScryptN, keystore.StandardScryptP)
+//	myAccount, err := myKeystore.NewAccount(passphrase)
+//	if nil != err {
+//		log.Panic("Failed to Create Account: %v", err)
+//	}
+//	address := myAccount.GetAddress().GetHex()
+//	return errcode.SUCCESS.Result(address)
+//}
